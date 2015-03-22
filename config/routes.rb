@@ -47,6 +47,21 @@ ReelBadNightRails::Application.routes.draw do
   # # Destroy
   delete "/films/:id" => 'films#delete', :as => "film"
   
+  # Index
+  get "/patrons" => 'patrons#index', :as => "patrons"
+  # New
+  get "/patrons/new" => 'patrons#new', :as => "new_patron"
+  # Create
+  post "/patrons" => 'patrons#create', :as => "patrons"
+  # Show
+  get "/patrons/:id" => 'patrons#show', :as => "patron"
+  # Edit
+  get "/patrons/:id/edit" => 'patrons#edit', :as => "edit_patron"
+  # Update
+  put "/patrons/:id" => 'patrons#update', :as => "patron"
+  # # Destroy
+  delete "/patrons/:id" => 'patrons#delete', :as => "patron"
+  
 
   #FOR REFERENCE FROM MINI RAILS PROJECT
   # root to: 'dinners#homepage'
