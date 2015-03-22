@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150322195428) do
+ActiveRecord::Schema.define(:version => 20150322200041) do
 
   create_table "drinks", :force => true do |t|
     t.text    "name"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20150322195428) do
     t.text    "host_msg"
     t.integer "current_event"
     t.integer "film_id"
+  end
+
+  create_table "events_patrons", :force => true do |t|
+    t.integer "event_id"
+    t.integer "patron_id"
   end
 
   create_table "films", :force => true do |t|
