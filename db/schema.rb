@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150322194944) do
+ActiveRecord::Schema.define(:version => 20150322195428) do
+
+  create_table "drinks", :force => true do |t|
+    t.text    "name"
+    t.text    "category"
+    t.text    "description"
+    t.integer "event_id"
+  end
 
   create_table "events", :force => true do |t|
     t.text    "start_time"
