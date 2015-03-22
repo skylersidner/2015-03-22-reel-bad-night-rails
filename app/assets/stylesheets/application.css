@@ -11,3 +11,188 @@
  *= require_self
  *= require_tree .
  */
+
+
+/* Putting everything here for now */
+
+body {
+  margin: 4px;
+  background-color: black;
+}
+
+
+
+.nav_column {
+  background-color: #AA9539;
+  display: block;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 30px;
+}
+
+.nav_column ul {
+  margin: 0px;
+  padding: 0px;
+}
+.nav_column li {
+  list-style: none;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0px;
+  display: inline-block;
+  font-size: 30px;
+}
+
+.nav_column h3 {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.nav_column a:link {
+  color: #806C15;
+}
+
+.nav_column a:visited {
+  color: #554500;
+}
+
+.nav_column a:hover {
+  color: #FFEFAA;
+}
+
+.login_bar {
+  position: relative;
+  width: 100%;
+  color: #AAAAAA;
+  margin: 0;
+}
+
+.username {
+  float: left;
+}
+
+.username p {
+  margin: 0;
+  color: #AAAAAA;
+}
+
+.login_button {
+  float: right;
+}
+
+.login_button p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.login_button a {
+  color: #AAAAAA;
+}
+
+.login_button a:hover {
+  color: #FFFFFF;
+}
+
+.banner {
+  background-color: #AA8239;
+  height: auto;
+  position: relative;
+  top: 100px;
+}
+
+
+
+.layout {
+  position: relative;
+  top: 100px;
+}
+
+
+
+.block1 {
+  background-color: #AA8239;
+}
+
+.block1 p {
+  margin: 0px;
+  text-align: center;
+  font-size: 24px;
+  padding: 4px;
+}
+
+.block1 a:link {
+  color: #805A15;
+}
+
+.block1 a:visited {
+  color: #553700;
+}
+
+.block1 a:hover {
+  color: #FFE1AA;
+}
+
+
+
+.previous {
+  background-color: #AA7139;
+}
+
+.previous p {
+  color: #FFE1AA;
+}
+
+.previous h3 {
+  color: #552A00;
+}
+
+.current {
+  background-color: #AA9539;
+}
+
+.current p {
+  color: #FFEFAA;
+}
+
+.current h3 {
+  color: #553700;
+}
+
+h1 {
+    padding: 2px;
+    padding-top: 4px;
+    color: #553A00;
+    text-align: center;
+    margin: 5px;
+}
+
+h2 {
+  color: #AAAAAA;
+  padding: 2px;
+  text-align: center;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+.display {
+  background-color: #AA6939;
+  margin: 5px;
+  padding: 2px;
+  overflow: auto;
+}
+
+.display p {
+  color: #FFCEAA;
+}
+
+.rotten_results {
+  float: left;
+}
+
+.movie_thumb {
+  float: right;
+}
+

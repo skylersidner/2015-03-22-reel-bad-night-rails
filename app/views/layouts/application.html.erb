@@ -9,40 +9,40 @@
 
 
 <body>
-    <% if @user != nil %>
-      <div class="login_bar">
-        <div class="username">
-          <p><%= @user.username %></p>
-        </div>
-        <div class="login_button">
-          <p><a href="/logout">Logout</a></p>
-        </div>
+  <% if @user != nil %>
+    <div class="login_bar">
+      <div class="username">
+        <p><%= @user.username %></p>
       </div>
-    <% else %>
-      <div class="login_bar">
-        <div class="username">
-          <p>Not Logged In</p>
-        </div>
-        <div class="login_button">
-          <p><a href="/login">Login</a></p>
-        </div>
+      <div class="login_button">
+        <p><a href="/logout">Logout</a></p>
       </div>
-    <% end %>
-    
-    <div class="nav_column">
-      <h3><a href="/">Home</a></h3>
-      <ul>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/patrons">Patrons</a></li>
-        <li><a href="/drinks">Drinks</a></li>
-        <li><a href="/films">Films</a></li>
-      </ul>
     </div>
-    <div class="banner">
-      <h1>A Reel Bad Night</h1>
+  <% else %>
+    <div class="login_bar">
+      <div class="username">
+        <p>Not Logged In</p>
+      </div>
+      <div class="login_button">
+        <p><a href="/login">Login</a></p>
+      </div>
     </div>
-    <div class="layout">
-      <%= yield %>
-    </div> 
+  <% end %>
+  
+  <div class="nav_column">
+    <h3><a href="/">Home</a></h3>
+    <ul>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/patrons">Patrons</a></li>
+      <li><a href="/drinks">Drinks</a></li>
+      <li><a href="/films">Films</a></li>
+    </ul>
+  </div>
+  <div class="banner">
+    <h1>A Reel Bad Night</h1>
+  </div>
+  <div class="layout">
+    <%= yield %>
+  </div> 
 </body>
 </html>
