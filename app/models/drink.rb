@@ -1,4 +1,4 @@
-class Drinks < ActiveRecord::Base
+class Drink < ActiveRecord::Base
   attr_accessible :name, :category, :description, :event_id  
   
   belongs_to :event
