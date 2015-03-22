@@ -1,7 +1,7 @@
 class DrinksController < ApplicationController
 
   def index
-
+    @results = Drink.all
   end
   
   def new

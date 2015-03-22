@@ -1,6 +1,6 @@
 ReelBadNightRails::Application.routes.draw do
 
-  #root to: 'to_be_decided#homepage'
+  root to: 'home#homepage'
   
   # Index
   get "/drinks" => 'drinks#index', :as => "drinks"
