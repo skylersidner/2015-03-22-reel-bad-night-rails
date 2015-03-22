@@ -22,10 +22,6 @@ end
 
 gem 'jquery-rails'
 
-# This is necessary for 3.2 rails console to work properly!
-# Remember to 'bundle install' after any change to the Gemfile!
-gem 'test-unit'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -40,3 +36,15 @@ gem 'test-unit'
 
 # To use debugger
 # gem 'debugger'
+
+
+
+# This is necessary for 3.2 rails console to work properly!
+# Remember to 'bundle install' after any change to the Gemfile!
+gem 'test-unit'
+
+# This enables pry to test ruby functionality within program
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+end
