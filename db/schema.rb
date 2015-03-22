@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150322194352) do
+ActiveRecord::Schema.define(:version => 20150322194944) do
+
+  create_table "events", :force => true do |t|
+    t.text    "start_time"
+    t.text    "host_msg"
+    t.integer "current_event"
+    t.integer "film_id"
+  end
 
   create_table "films", :force => true do |t|
     t.text    "title"
