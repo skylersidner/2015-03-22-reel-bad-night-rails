@@ -17,7 +17,21 @@ ReelBadNightRails::Application.routes.draw do
   # # Destroy
   delete "/drinks/:id" => 'drinks#delete', :as => "drink"
 
-
+  # Index
+  get "/events" => 'events#index', :as => "events"
+  # New
+  get "/events/new" => 'events#new', :as => "new_event"
+  # Create
+  post "/events" => 'events#create', :as => "events"
+  # Show
+  get "/events/:id" => 'events#show', :as => "event"
+  # Edit
+  get "/events/:id/edit" => 'events#edit', :as => "edit_event"
+  # Update
+  put "/events/:id" => 'events#update', :as => "event"
+  # # Destroy
+  delete "/events/:id" => 'events#delete', :as => "event"
+  
 
   #FOR REFERENCE FROM MINI RAILS PROJECT
   # root to: 'dinners#homepage'
