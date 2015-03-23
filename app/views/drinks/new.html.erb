@@ -1,0 +1,26 @@
+<h2>Create a new Drink</h2>
+
+<div class="display">
+  
+  <% @object.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+  
+  <div class="new_form">
+    <%= form_for @object do |f| %>
+      <%= f.label "name" %>
+      <%= f.text_field("name") %><br>
+  
+      <%= f.label "category" %>
+      <%= f.text_field("category") %><br>
+  
+      <%= f.label "description" %>
+      <%= f.text_field("description") %><br>
+  
+      <%= f.label "event_id" %>
+      <%= f.text_field("event_id") %><br>
+  
+      <%= f.submit "Add This!"%>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<h2>Drink #<%= @object.id %></h2>
+
+<div class="display">
+  <p>ID: <%= @object.id %></p>
+  <p>Name: <%= @object.name %></p>
+  <p>Category: <%= @object.category %></p>
+  <p>Description: <%= @object.description %></p>
+  <p>Event: <%= @object.event_id %></p>
+  <%= link_to "Edit", "/drinks/#{@object.id}/edit", :class => "form_button"%>
+</div>

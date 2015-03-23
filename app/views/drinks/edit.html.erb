@@ -1,6 +1,11 @@
-<h2>Create a new Drink</h2>
+<h2>Edit a Drink</h2>
 
 <div class="display">
+  
+  <% @object.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+  
   <div class="new_form">
     <%= form_for @object do |f| %>
       <%= f.label "name" %>
@@ -15,7 +20,8 @@
       <%= f.label "event_id" %>
       <%= f.text_field("event_id") %><br>
   
-      <%= f.submit "Add This!"%>
+      <%= f.submit "Update This!"%>
     <% end %>
+    <%= link_to "Delete This!", "/drinks/#{@object.id}", :class => "form_button", method: :delete %>
   </div>
 </div>
