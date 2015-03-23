@@ -5,7 +5,7 @@ class DrinksController < ApplicationController
   end
   
   def new
-
+    @object = Drink.new
   end
   
   def create
