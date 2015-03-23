@@ -1,0 +1,12 @@
+<h2>Film #<%= @object.id %></h2>
+
+<div class="display">
+  <p>ID: <%= @object.id %></p>
+  <p>Title: <%= @object.title %></p>
+  <p>Year: <%= @object.year %></p>
+  <p>Length: <%= @object.length %></p>
+  <p>Synopsis: <%= @object.synopsis %></p>
+  <p>Trailer: <%= @object.trailer %></p>
+  <p>Rotten/Fresh Ratin: <%= @object.rt_rating %></p>
+  <%= link_to "Edit", "/films/#{@object.id}/edit", :class => "form_button"%>
+</div>
