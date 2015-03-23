@@ -1,0 +1,27 @@
+<h2>Edit a Patron</h2>
+
+<div class="display">
+  
+  <% @object.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+  
+  <div class="new_form">
+    <%= form_for @object do |f| %>
+      <%= f.label "first_name" %>
+      <%= f.text_field("first_name") %><br>
+  
+      <%= f.label "last_name" %>
+      <%= f.text_field("last_name") %><br>
+  
+      <%= f.label "username" %>
+      <%= f.text_field("username") %><br>
+  
+      <%= f.label "password" %>
+      <%= f.text_field("password") %><br>
+  
+      <%= f.submit "Update This!"%>
+    <% end %>
+    <%= link_to "Delete This!", "/patrons/#{@object.id}", :class => "form_button", method: :delete %>
+  </div>
+</div>

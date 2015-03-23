@@ -1,0 +1,9 @@
+<h2>Patron #<%= @object.id %></h2>
+
+<div class="display">
+      <p>ID: <%= @object.id %></p>
+      <p>First Name: <%= @object.first_name %></p>
+      <p>Last Name: <%= @object.last_name %></p>
+      <p>Username: <%= @object.username %></p>
+  <%= link_to "Edit", "/patrons/#{@object.id}/edit", :class => "form_button"%>
+</div>
