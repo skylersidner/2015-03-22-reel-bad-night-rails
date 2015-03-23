@@ -38,6 +38,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    deepopenstruct (0.1.2)
+    dotenv (2.0.0)
+    dotenv-rails (2.0.0)
+      dotenv (= 2.0.0)
     erubis (2.7.0)
     execjs (2.4.0)
     hike (1.2.3)
@@ -87,6 +91,9 @@ GEM
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    rottentomatoes (1.1.2)
+      deepopenstruct (>= 0.1.2)
+      json
     sass (3.4.13)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -115,11 +122,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  dotenv-rails
   jquery-rails
   pg
   pry
   pry-rails
   rails (= 3.2.21)
+  rottentomatoes
   sass-rails (~> 3.2.3)
   test-unit
   uglifier (>= 1.0.3)

@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-
+  include FilmsHelper
 
   def index
     @results = Film.all
@@ -39,6 +39,17 @@ class FilmsController < ApplicationController
     @object = Film.find_by_id(params[:id])
     @object.destroy
     redirect_to "/films"
+  end
+  
+  def search_rt
+    @thumbs = []
+    @results = []
+    if params[:search] != nil
+      get_rt_search_results #helper
+      if @results.count == 0
+        @no_results = true
+      end
+    end
   end
 
 

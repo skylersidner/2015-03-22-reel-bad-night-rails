@@ -1,0 +1,50 @@
+<a name="top"></a>
+<h2>Create a new film...</h2>
+
+
+<div class="block1">
+  <p>RottenTomatoes.com a vast trove of data.  Broad searches can reveal hundreds of results.  This has been restricted to the top 20.</p>
+</div>
+
+
+<div class="block1">
+  <form action="/films/0/search_rt">
+    <select name="search_by">
+      <option value="title">Title</option>
+    </select>
+    <input type="text" name="search">
+    <input type="submit" value="Search">
+  </form>
+</div>
+
+<% if @results.count != 0 %>
+  <% @results.each do |object| %>
+    <div class="display">
+      <form action="/films/new">
+        <div class="rotten_results">
+          <p>Title: <%= object.title %></p>
+          <input type="hidden" name="title" value="<%= object.title %>">
+          <p>Year: <%= object.year %></p>
+          <input type="hidden" name="year" value="<%= object.year %>">
+          <p>Length: <%= object.length %> min</p>
+          <input type="hidden" name="length" value="<%= object.length %>">
+          <p>Plot Synopsis: <%= object.synopsis %></p>
+          <input type="hidden" name="synopsis" value="<%= object.synopsis %>">
+          <p>Rotten/Fresh Rating: <%= object.rt_rating %></p>
+          <input type="hidden" name="rt_rating" value="<%= object.rt_rating %>">
+          <input type="submit" value="This one!">
+        </div>
+        <div class="movie_thumb">
+          <img src="<%= @thumbs[@results.find_index(object)] %>" alt="poster thumbnail" height="100" width="67">
+        </div>
+      </form>
+    </div>
+  <% end %>
+  <a href="#top">Back to top</a>
+<% end %>
+
+<% if @no_results == true %>
+  <div class="block1">
+    <p>No results matched your search!<p>
+  </div>
+<% end %>

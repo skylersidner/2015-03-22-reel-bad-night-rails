@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# enables environment variables for my rottentomatoes API key
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
@@ -48,3 +51,7 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
 end
+
+
+gem 'rottentomatoes'
+

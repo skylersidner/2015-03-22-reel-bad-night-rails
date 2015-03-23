@@ -14,7 +14,7 @@ ReelBadNightRails::Application.routes.draw do
   get "/drinks/:id/edit" => 'drinks#edit', :as => "edit_drink"
   # Update
   put "/drinks/:id" => 'drinks#update', :as => "drink"
-  # # Destroy
+  # Destroy
   delete "/drinks/:id" => 'drinks#delete', :as => "drink"
 
   # Index
@@ -29,7 +29,7 @@ ReelBadNightRails::Application.routes.draw do
   get "/events/:id/edit" => 'events#edit', :as => "edit_event"
   # Update
   put "/events/:id" => 'events#update', :as => "event"
-  # # Destroy
+  # Destroy
   delete "/events/:id" => 'events#delete', :as => "event"
   
   # Index
@@ -44,8 +44,10 @@ ReelBadNightRails::Application.routes.draw do
   get "/films/:id/edit" => 'films#edit', :as => "edit_film"
   # Update
   put "/films/:id" => 'films#update', :as => "film"
-  # # Destroy
+  # Destroy
   delete "/films/:id" => 'films#delete', :as => "film"
+  
+  get "/films/0/search_rt" => 'films#search_rt'
   
   # Index
   get "/patrons" => 'patrons#index', :as => "patrons"
@@ -59,7 +61,7 @@ ReelBadNightRails::Application.routes.draw do
   get "/patrons/:id/edit" => 'patrons#edit', :as => "edit_patron"
   # Update
   put "/patrons/:id" => 'patrons#update', :as => "patron"
-  # # Destroy
+  # Destroy
   delete "/patrons/:id" => 'patrons#delete', :as => "patron"
   
 
