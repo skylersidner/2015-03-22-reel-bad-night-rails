@@ -1,0 +1,25 @@
+<h2>Films</h2>
+
+<div class="block1">
+  <p><a href="/films/search">Search for a specific film</a></p>
+  <p><a href="/films/new">Make a new film</a></p>
+</div>
+
+<% if @results.count > 0 %>
+  <% @results.each do |object| %>
+    <div class="display">
+      <p>ID: <%= object.id %></p>
+      <p>Title: <%= object.title %></p>
+      <p>Year: <%= object.year %></p>
+      <p>Length: <%= object.length %></p>
+      <p>Synopsis: <%= object.synopsis %></p>
+      <p>Trailer: <%= object.trailer %></p>
+      <p>Rotten/Fresh Ratin: <%= object.rt_rating %></p>
+      <%= link_to "See this one", "/films/#{object.id}", :class => "form_button"%>
+    </div>
+  <% end %>
+<% else %>
+  <div class="block1">
+    <p>No results matched your search!<p>
+  </div>
+<% end %>

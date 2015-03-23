@@ -2,31 +2,43 @@ class FilmsController < ApplicationController
 
 
   def index
-
+    @results = Film.all
   end
   
   def new
-
+    @object = Film.new
   end
   
   def create
-
+    @object = Film.new(params[:film])
+    if @object.save
+      redirect_to "/films/#{@object.id}"
+    else      
+      render "new"
+    end
   end
   
   def show
-
+    @object = Film.find_by_id(params[:id])
   end
   
   def edit
-
+    @object = Film.find_by_id(params[:id])
   end
   
   def update
-
+    @object = Film.find_by_id(params[:id])
+    if @object.update_attributes(params[:film])
+      redirect_to "/films/#{@object.id}"
+    else      
+      render "edit"
+    end
   end
   
   def delete
-
+    @object = Film.find_by_id(params[:id])
+    @object.destroy
+    redirect_to "/films"
   end
 
 
