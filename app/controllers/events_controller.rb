@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
 
-
   def index
     @results = Event.all
   end
@@ -29,7 +28,7 @@ class EventsController < ApplicationController
   def update
     @object = Event.find_by_id(params[:id])
     if @object.update_attributes(params[:event])
-      redirect_to "/events/#{@event.id}"
+      redirect_to "/events/#{@object.id}"
     else      
       render "edit"
     end

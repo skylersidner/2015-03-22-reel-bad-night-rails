@@ -1,0 +1,23 @@
+<h2>Events</h2>
+
+<div class="block1">
+  <p><a href="/events/search">Search for a specific event</a></p>
+  <p><a href="/events/new">Make a new event</a></p>
+</div>
+
+<% if @results.count > 0 %>
+  <% @results.each do |object| %>
+    <div class="display">
+      <p>ID: <%= object.id %></p>
+      <p>Start Time: <%= object.start_time %></p>
+      <p>Host Message: <%= object.host_msg %></p>
+      <p>Current Event: <%= object.current_event %></p>
+      <p>Film ID: <%= object.film_id %></p>
+      <%= link_to "See this one", "/events/#{object.id}", :class => "form_button"%>
+    </div>
+  <% end %>
+<% else %>
+  <div class="block1">
+    <p>No results matched your search!<p>
+  </div>
+<% end %>

@@ -13,10 +13,7 @@
       <p>Category: <%= object.category %></p>
       <p>Description: <%= object.description %></p>
       <p>Event: <%= object.event_id %></p>
-      <form action="/drinks/<%= object.id %>">
-        <input type="hidden" value="<%= object.id %>">
-        <input type="submit" value="See this one">
-      </form>
+      <%= link_to "See this one", "/drinks/#{object.id}", :class => "form_button"%>
     </div>
   <% end %>
 <% else %>
