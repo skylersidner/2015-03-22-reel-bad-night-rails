@@ -70,5 +70,16 @@ ReelBadNightRails::Application.routes.draw do
   post "/validate" => 'logins#validate'
   
   get "/logout" => 'logins#logout'
+  
+  
+  get "/search" => 'search#search'
+  
+  get "/search/events" => 'search#events'
+  
+  get "/search/patrons" => 'search#patrons'
+  
+  get "/search/drinks" => 'search#drinks'
+  
+  get "/search/films" => 'search#films'
 
 end
