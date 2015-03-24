@@ -15,7 +15,7 @@
           <p><%= @user.username %></p>
         </div>
         <div class="login_button">
-          <p><a href="/logout">Logout</a></p>
+          <p><%= link_to "Logout", "/logout" %></p>
         </div>
       </div>
     <% else %>
@@ -24,7 +24,7 @@
           <p>Not Logged In</p>
         </div>
         <div class="login_button">
-          <p><a href="/login">Login</a></p>
+       <p><%= link_to "Login", "/login" %></p>
         </div>
       </div>
     <% end %>

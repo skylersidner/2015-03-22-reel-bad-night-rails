@@ -64,5 +64,11 @@ ReelBadNightRails::Application.routes.draw do
   # Destroy
   delete "/patrons/:id" => 'patrons#delete', :as => "patron"
   
+  
+  get "/login" => 'logins#login'
+  
+  post "/validate" => 'logins#validate'
+  
+  get "/logout" => 'logins#logout'
 
 end

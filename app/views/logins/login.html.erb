@@ -1,0 +1,23 @@
+<% if flash[:logout] %>
+  <h2><%= flash[:logout] %></h2>
+<% else %>
+  <h2>Login</h2>
+<% end %>
+
+<% if flash[:denied] %>
+  <h2><%= flash[:denied] %></h2>
+<% end %>
+
+<% if flash[:failed] %>
+  <h2><%= flash[:failed] %></h2>
+<% end %>
+
+<div class="display">
+  <%= form_tag("/validate", method: "post") do %>
+    <%= label_tag(:username, "Username:") %>
+    <%= text_field_tag(:username) %>
+    <%= label_tag(:password, "Password:") %>
+    <%= password_field_tag(:password) %>
+    <%= submit_tag("Submit") %>
+  <% end %>
+</div>
