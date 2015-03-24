@@ -69,6 +69,7 @@ body {
   color: #AAAAAA;
   margin: 0;
   text-align: center;
+  height: 30px;
 }
 
 .username {
@@ -100,7 +101,6 @@ body {
 }
 
 .banner {
-
   height: auto;
   width: 60%;
   float: left;
