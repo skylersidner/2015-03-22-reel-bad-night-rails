@@ -83,5 +83,11 @@ ReelBadNightRails::Application.routes.draw do
   get "/search/films" => 'search#films'
   
   get "/search/events/results" => 'search#events_results'
+  
+  get "/search/patrons/results" => 'search#patrons_results'
+  
+  get "/search/drinks/results" => 'search#drinks_results'
+  
+  get "/search/films/results" => 'search#films_results'
 
 end

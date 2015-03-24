@@ -1,0 +1,10 @@
+<h2>Search Patrons</h2>
+
+<div class="block1">
+  <%= form_tag("/search/patrons/results", method: "get") do %>
+    <%= label_tag(:search, "Search for:") %>
+    <%= select_tag(:field, options_for_select([['ID', 'id'], ['First Name', 'first_name'], ['Last Name', 'last_name'], ['Username', 'username']])) %>
+    <%= text_field_tag(:value) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

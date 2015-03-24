@@ -1,0 +1,17 @@
+<h2>Patrons Search Results</h2>
+
+<% if @results.count > 0 %>
+  <% @results.each do |object| %>
+    <div class="display">
+      <p>ID: <%= object.id %></p>
+      <p>First Name: <%= object.first_name %></p>
+      <p>Last Name: <%= object.last_name %></p>
+      <p>Username: <%= object.username %></p>
+      <%= link_to "See this one", "/patrons/#{object.id}", :class => "form_button"%>
+    </div>
+  <% end %>
+<% else %>
+  <div class="block1">
+    <p>No results matched your search!<p>
+  </div>
+<% end %>
