@@ -68,10 +68,12 @@ body {
   width: 100%;
   color: #AAAAAA;
   margin: 0;
+  text-align: center;
 }
 
 .username {
   float: left;
+    width: 20%;
 }
 
 .username p {
@@ -81,6 +83,7 @@ body {
 
 .login_button {
   float: right;
+  width: 20%;
 }
 
 .login_button p {
@@ -97,17 +100,17 @@ body {
 }
 
 .banner {
-  background-color: #AA8239;
+
   height: auto;
-  position: relative;
-  top: 130px;
+  width: 60%;
+  float: left;
 }
 
 
 
 .layout {
   position: relative;
-  top: 130px;
+  top: 100px;
 }
 
 
@@ -161,11 +164,7 @@ body {
   color: #553700;
 }
 
-h1 {
-    padding: 2px;
-    padding-top: 4px;
-    color: #553A00;
-    text-align: center;
+h3 {
     margin: 5px;
 }
 
