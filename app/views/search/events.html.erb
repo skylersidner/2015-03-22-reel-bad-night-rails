@@ -3,7 +3,7 @@
 <div class="block1">
   <%= form_tag("/search/events/results", method: "get") do %>
     <%= label_tag(:search, "Search for:") %>
-    <%= select_tag(:field, options_for_select([['ID', 'id'], ['Start Time', 'start_time'], ['Film ID', 'film_id']])) %>
+    <%= select_tag(:field, options_for_select([['ID', 'id'], ['Start Time', 'start_time'], ['Film (by ID)', 'film_id']])) %>
     <%= text_field_tag(:value) %>
     <%= submit_tag("Search") %>
   <% end %>

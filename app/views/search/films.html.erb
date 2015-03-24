@@ -1,0 +1,10 @@
+<h2>Search Films</h2>
+
+<div class="block1">
+  <%= form_tag("/search/films/results", method: "get") do %>
+    <%= label_tag(:search, "Search for:") %>
+    <%= select_tag(:field, options_for_select([['ID', 'id'], ['Title', 'title'], ['Year', 'year'], ['Length', 'length'], ['Rating', 'rt_rating']])) %>
+    <%= text_field_tag(:value) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

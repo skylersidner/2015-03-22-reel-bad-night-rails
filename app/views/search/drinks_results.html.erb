@@ -1,0 +1,18 @@
+<h2>Drinks Search Results</h2>
+
+<% if @results.count > 0 %>
+  <% @results.each do |object| %>
+    <div class="display">
+      <p>ID: <%= object.id %></p>
+      <p>Name: <%= object.name %></p>
+      <p>Category: <%= object.category %></p>
+      <p>Description: <%= object.description %></p>
+      <p>Event: <%= object.event_id %></p>
+      <%= link_to "See this one", "/drinks/#{object.id}", :class => "form_button"%>
+    </div>
+  <% end %>
+<% else %>
+  <div class="block1">
+    <p>No results matched your search!<p>
+  </div>
+<% end %>

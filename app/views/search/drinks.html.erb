@@ -1,0 +1,10 @@
+<h2>Search Drinks</h2>
+
+<div class="block1">
+  <%= form_tag("/search/drinks/results", method: "get") do %>
+    <%= label_tag(:search, "Search for:") %>
+    <%= select_tag(:field, options_for_select([['ID', 'id'], ['Name', 'name'], ['Category', 'category'], ['Event (by ID)', 'event_id']])) %>
+    <%= text_field_tag(:value) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
