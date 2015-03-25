@@ -1,4 +1,7 @@
 class Patron < ActiveRecord::Base
+  # Necessary for bcrypt built-in Rails methods to work
+  has_secure_password
+  
   attr_accessible :first_name, :last_name, :username, :password
   
   has_and_belongs_to_many :events
