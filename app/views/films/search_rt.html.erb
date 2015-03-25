@@ -20,24 +20,24 @@
 <% if @results.count != 0 %>
   <% @results.each do |object| %>
     <div class="display">
-      <form action="/films/new">
+      <%= form_tag("/films/new", method: "get") do %>
         <div class="rotten_results">
           <p>Title: <%= object.title %></p>
-          <input type="hidden" name="title" value="<%= object.title %>">
+            <%= hidden_field_tag("title", "#{object.title}") %>
           <p>Year: <%= object.year %></p>
-          <input type="hidden" name="year" value="<%= object.year %>">
+            <%= hidden_field_tag("year", "#{object.year}") %>
           <p>Length: <%= object.length %> min</p>
-          <input type="hidden" name="length" value="<%= object.length %>">
+            <%= hidden_field_tag("length", "#{object.length}") %>
           <p>Plot Synopsis: <%= object.synopsis %></p>
-          <input type="hidden" name="synopsis" value="<%= object.synopsis %>">
+            <%= hidden_field_tag("synopsis", "#{object.synopsis}") %>
           <p>Rotten/Fresh Rating: <%= object.rt_rating %></p>
-          <input type="hidden" name="rt_rating" value="<%= object.rt_rating %>">
-          <input type="submit" value="This one!">
+            <%= hidden_field_tag("rt_rating", "#{object.rt_rating}") %>
+            <%= submit_tag "This One!"%>
         </div>
         <div class="movie_thumb">
           <img src="<%= @thumbs[@results.find_index(object)] %>" alt="poster thumbnail" height="100" width="67">
         </div>
-      </form>
+      <% end %>
     </div>
   <% end %>
   <a href="#top">Back to top</a>

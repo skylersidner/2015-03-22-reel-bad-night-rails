@@ -7,10 +7,11 @@ class FilmsController < ApplicationController
   
   def new
     if params["title"] != nil
-      @object = Film.new("title"=>params["title"], "year"=>params["year"], "length"=>params["length"], "synopsis"=>params["synopsis"])
+      @object = Film.new("title"=>params["title"], "year"=>params["year"], "length"=>params["length"], "synopsis"=>params["synopsis"], "rt_rating"=>params["rt_rating"])
     else
       @object = Film.new
     end
+    binding.pry
   end
   
   def create
