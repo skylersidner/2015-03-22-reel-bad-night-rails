@@ -56,6 +56,7 @@ end
 gem 'rottentomatoes'
 
 # Adding encryption for passwords
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 

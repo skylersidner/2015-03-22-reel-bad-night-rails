@@ -6,20 +6,27 @@ class LoginsController < ApplicationController
   end
   
   def validate
-    @user = Patron.find_by_username(params[:username])
-    if @user == nil || @user.password != params[:password]
-      flash[:failed] = "Login Failed!"
-      redirect_to "/login"
+    @errors = {}  
+    if @user = Patron.find_by_username(params[:username])
+      if @user.try(:authenticate, params[:password])
+        session[:user] = @user.id
+        flash[:success] = "Login Successful!"
+        redirect_to "/patrons/#{@user.id}"
+      else
+        @errors[:password] = "Invalid Password"
+        render "login"
+      end
+    else
+      @errors[:username] = "Invalid Username"
+      render "login"
     end
-    session[:user] = @user.id
-    flash[:success] = "Login Successful!"
-    redirect_to "/patrons/#{@user.id}"
+
   end
   
   def logout
     no_user #helper
     flash[:logout] = "Logged Out!"
-    redirect_to "/login"
+    render "login"
   end
 
 
