@@ -6,18 +6,19 @@ class LoginsController < ApplicationController
   end
   
   def validate
-    @errors = {}  
+    @errors = [] 
     if @user = Patron.find_by_username(params[:username])
       if @user.try(:authenticate, params[:password])
         session[:user] = @user.id
         flash[:success] = "Login Successful!"
         redirect_to "/patrons/#{@user.id}"
       else
-        @errors[:password] = "Invalid Password"
+        @errors << "Invalid Password"
+        binding.pry
         render "login"
       end
     else
-      @errors[:username] = "Invalid Username"
+      @errors << "Invalid Username"
       render "login"
     end
 

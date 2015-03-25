@@ -4,12 +4,8 @@
   <h2>Login</h2>
 <% end %>
 
-<% if flash[:denied] %>
-  <h2><%= flash[:denied] %></h2>
-<% end %>
-
-<% if flash[:failed] %>
-  <h2><%= flash[:failed] %></h2>
+<% @errors.each do |msg| %>
+  <h2><%= msg %></h2>
 <% end %>
 
 <div class="display">
