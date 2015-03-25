@@ -52,6 +52,10 @@ group :development do
   gem 'pry-rails'
 end
 
-
+# Necessary for finding film information via RT API
 gem 'rottentomatoes'
+
+# Adding encryption for passwords
+gem 'bcrypt'
+
 
