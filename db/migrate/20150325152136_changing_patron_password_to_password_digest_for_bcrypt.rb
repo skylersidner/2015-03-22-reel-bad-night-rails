@@ -1,7 +1,7 @@
 class ChangingPatronPasswordToPasswordDigestForBcrypt < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+  def change
+    change_table :patrons do |t|
+      t.rename :password, :password_digest
+    end
   end
 end
