@@ -2,7 +2,6 @@ class LoginsController < ApplicationController
   include LoginsHelper
 
   def login
-
   end
   
   def validate

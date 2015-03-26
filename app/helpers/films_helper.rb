@@ -19,11 +19,10 @@ module FilmsHelper
       @results << film
       
       if x.posters.thumbnail == nil
-        # @thumbs << "/Users/skylersidner/Code/2015-03-22-reel-bad-night-rails/reel-bad-night-rails/app/assets/images/poster_default.gif"
         @thumbs << "../images/poster_default.gif"
       else
         @thumbs << x.posters.thumbnail
-      end
+      end #if
     end #each
     @results
   end #method
