@@ -19,9 +19,13 @@
   
       <%= f.label "username" %>
       <%= f.text_field("username") %><br>
+      <p>Note: leave this blank if you don't want to change your password.</p>
+      <%= f.label "password", "Password" %>
+      <%= f.password_field("password") %><br>
   
       <%= f.submit "Update This!"%>
     <% end %>
+    <%= link_to "Change your password", "/patrons#{@object.id}/password", :class => "form_button" %><br>
     <%= link_to "Delete This!", "/patrons/#{@object.id}", :class => "form_button", method: :delete, :data => {:confirm => "Are You Sure?"} %>
   </div>
 </div>

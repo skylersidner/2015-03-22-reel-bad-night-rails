@@ -28,6 +28,10 @@ class PatronsController < ApplicationController
   
   def update
     @object = Patron.find_by_id(params[:id])
+    if params[:patron][:password] == ""
+      @object.password = params[:patron][:password]
+    end
+    
     if @object.update_attributes(params[:patron])
       redirect_to "/patrons/#{@object.id}"
     else      
