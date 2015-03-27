@@ -38,8 +38,11 @@ class LoginsController < ApplicationController
       @user.password = random_password
       @user.save
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING password", :body => "If you're reading this, password email worked. It should now be #{random_password}.")
+      # Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING password", :body => "If you're reading this, password email worked. It should now be #{random_password}.")
       @messages << "Password Reset!  Check your email."
+      
+      @messages << "#{random_password}"
+      
       redirect_to "/login"
     else
       @messages << "Invalid Username"
@@ -53,7 +56,7 @@ class LoginsController < ApplicationController
   def retrieve
     if @user = Patron.find_by_email(params[:email])
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
+      # Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
       @messages << "Username Sent!  Check your email."
       redirect_to "/login"
     else
