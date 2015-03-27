@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150325152136) do
+ActiveRecord::Schema.define(:version => 20150327191704) do
 
   create_table "drinks", :force => true do |t|
     t.text    "name"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(:version => 20150325152136) do
   end
 
   create_table "patrons", :force => true do |t|
-    t.text "first_name"
-    t.text "last_name"
-    t.text "username"
-    t.text "password_digest"
+    t.text   "first_name"
+    t.text   "last_name"
+    t.text   "username"
+    t.text   "password_digest"
+    t.string "email"
   end
 
 end
