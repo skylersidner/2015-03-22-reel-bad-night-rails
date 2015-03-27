@@ -13,7 +13,6 @@ class LoginsController < ApplicationController
         redirect_to "/patrons/#{@user.id}"
       else
         @errors << "Invalid Password"
-        binding.pry
         render "login"
       end
     else
@@ -26,7 +25,7 @@ class LoginsController < ApplicationController
   def logout
     no_user #helper
     flash[:logout] = "Logged Out!"
-    render "login"
+    redirect_to "/login"
   end
 
 

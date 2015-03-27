@@ -9,7 +9,7 @@
 
 
   <body>
-    <% if @user != nil %>
+    <% if session[:user] != nil %>
       <div class="login_bar">
         <div class="username">
           <p><%= @user.username %></p>

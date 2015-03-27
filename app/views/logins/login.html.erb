@@ -4,8 +4,10 @@
   <h2>Login</h2>
 <% end %>
 
-<% @errors.each do |msg| %>
-  <h2><%= msg %></h2>
+<% if @errors != nil %>
+  <% @errors.each do |msg| %>
+    <h2><%= msg %></h2>
+  <% end %>
 <% end %>
 
 <div class="display">
