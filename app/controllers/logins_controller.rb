@@ -54,7 +54,7 @@ class LoginsController < ApplicationController
     @messages = []
     if @user = Patron.find_by_email(params[:email])
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      # Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
+      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
       flash[:reset] = "Username Sent!  Check your email. #{@user.email}"
       redirect_to "/login"
     else
