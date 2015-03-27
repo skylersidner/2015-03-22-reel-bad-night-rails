@@ -32,21 +32,18 @@ class LoginsController < ApplicationController
   end
 
   def reset
-    @messages = [] 
+    @messages = []
     if @user = Patron.find_by_username(params[:username])
       random_password = Array.new(10).map { (65 + rand(58)).chr }.join
       @user.password = random_password
       @user.save
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      # Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING password", :body => "If you're reading this, password email worked. It should now be #{random_password}.")
-      @messages << "Password Reset!  Check your email."
-      
-      @messages << "#{random_password}"
-      
+      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING password", :body => "If you're reading this, password email worked. It should now be #{random_password}.")
+      flash[:reset] = "Password Reset!  Check your email. #{random_password}"
       redirect_to "/login"
     else
       @messages << "Invalid Username"
-      render "reset"
+      render "password"
     end
   end
   
@@ -54,14 +51,15 @@ class LoginsController < ApplicationController
   end
   
   def retrieve
+    @messages = []
     if @user = Patron.find_by_email(params[:email])
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
       # Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
-      @messages << "Username Sent!  Check your email."
+      flash[:reset] = "Username Sent!  Check your email. #{@user.email}"
       redirect_to "/login"
     else
       @messages << "Invalid Email Address"
-      render "retrieve"
+      render "username"
     end
   end
 

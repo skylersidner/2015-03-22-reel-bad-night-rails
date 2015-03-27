@@ -1,5 +1,7 @@
 <% if flash[:logout] %>
   <h2><%= flash[:logout] %></h2>
+<% elsif flash[:reset] %>
+  <h2><%= flash[:reset] %></h2>
 <% else %>
   <h2>Login</h2>
 <% end %>
@@ -20,4 +22,6 @@
   <% end %>
   <%= link_to "Forget your password?", "/password" %><br>
   <%= link_to "Forget your username?", "/username" %>
+  <br>
+  <p><%= flash[:reset] %></p>
 </div>
