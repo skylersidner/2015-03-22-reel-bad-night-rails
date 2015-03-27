@@ -1,0 +1,11 @@
+<h2>Retrieval</h2>
+
+<div class="display">
+  <p>If you know your username, enter it here to reset your password:</p>
+  <%= form_tag("/reset", method: "post") do %>
+    <%= label_tag(:username, "Username:") %>
+    <%= text_field_tag(:username) %>
+    <%= submit_tag("Reset Password") %>
+  <% end %>
+  <%= link_to "Forget your username?", "/get_username" %>
+</div>

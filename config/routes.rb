@@ -71,6 +71,12 @@ ReelBadNightRails::Application.routes.draw do
   
   get "/logout" => 'logins#logout'
   
+  get "/retrieval" => 'logins#retrieval'
+  
+  post "/reset" => 'logins#reset'
+  
+  post "/get_username" => 'logins#get_username'
+  
   
   get "/search" => 'search#search'
   
