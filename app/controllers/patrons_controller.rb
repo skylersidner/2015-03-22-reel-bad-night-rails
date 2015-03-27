@@ -23,6 +23,7 @@ class PatronsController < ApplicationController
   end
   
   def edit
+    # YOU WERE GOING TO CHANGE THE FILTER TO BE PART OF THE ROUTE!!!!!!!!
     @object = Patron.find_by_id(params[:id])
   end
   

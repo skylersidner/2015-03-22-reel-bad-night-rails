@@ -2,6 +2,8 @@
   <h2><%= flash[:logout] %></h2>
 <% elsif flash[:reset] %>
   <h2><%= flash[:reset] %></h2>
+<% elsif flash[:denied] %>
+  <h2><%= flash[:denied] %></h2>
 <% else %>
   <h2>Login</h2>
 <% end %>
