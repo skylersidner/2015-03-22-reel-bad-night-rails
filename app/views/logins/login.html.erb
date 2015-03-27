@@ -4,8 +4,8 @@
   <h2>Login</h2>
 <% end %>
 
-<% if @errors != nil %>
-  <% @errors.each do |msg| %>
+<% if @messages != nil %>
+  <% @messages.each do |msg| %>
     <h2><%= msg %></h2>
   <% end %>
 <% end %>
@@ -18,5 +18,6 @@
     <%= password_field_tag(:password) %>
     <%= submit_tag("Submit") %>
   <% end %>
-  <%= link_to "Forget your username/password?", "/reset" %>
+  <%= link_to "Forget your password?", "/password" %><br>
+  <%= link_to "Forget your username?", "/username" %>
 </div>
