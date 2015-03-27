@@ -8,7 +8,7 @@
 
 <div class="display">
   <p>Enter your Email address:</p>
-  <%= form_tag("/get_username", method: "post") do %>
+  <%= form_tag("/retrieve", method: "post") do %>
     <%= label_tag(:email, "Email:") %>
     <%= text_field_tag(:email) %>
     <%= submit_tag("Get your username") %>
