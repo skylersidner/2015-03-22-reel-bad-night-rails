@@ -38,8 +38,8 @@ class LoginsController < ApplicationController
       @user.password = random_password
       @user.save
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING password", :body => "If you're reading this, password email worked. It should now be #{random_password}.")
-      flash[:reset] = "Password Reset!  Check your email. #{random_password}"
+      Pony.mail(:to => "#{@user.email}", :from => "no_reply_reel_bad_admin@gmail.com", :subject => "Your reset password for A Reel Bad Night", :body => "Someone requested a password reset for this account (hopefully you). Your password has been reset to: #{random_password}.")
+      flash[:reset] = "Password Reset!  Check your email."
       redirect_to "/login"
     else
       @messages << "Invalid Username"
@@ -54,8 +54,8 @@ class LoginsController < ApplicationController
     @messages = []
     if @user = Patron.find_by_email(params[:email])
       # currently set to private email; NEEDS TO BE ROUTED TO DEDICATED PROJECT EMAIL!!!!!!!!!
-      Pony.mail(:to => "#{@user.email}", :from => "malevolentdragon@gmail.com", :subject => "TESTING username", :body => "If you're reading this, username email worked. The username is #{@user.username}.")
-      flash[:reset] = "Username Sent!  Check your email. #{@user.email}"
+      Pony.mail(:to => "#{@user.email}", :from => "no_reply_reel_bad_admin@gmail.com", :subject => "Your username for A Reel Bad Night", :body => "Someone requested a username retrieval for this account (hopefully you). Your username is #{@user.username}.")
+      flash[:reset] = "Username Sent!  Check your email."
       redirect_to "/login"
     else
       @messages << "Invalid Email Address"
