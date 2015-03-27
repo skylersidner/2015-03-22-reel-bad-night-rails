@@ -61,6 +61,8 @@ GEM
     multi_json (1.11.0)
     pg (0.18.1)
     polyglot (0.3.5)
+    pony (1.11)
+      mail (>= 2.0)
     power_assert (0.2.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -129,6 +131,7 @@ DEPENDENCIES
   dotenv-rails
   jquery-rails
   pg
+  pony (= 1.11)
   pry
   pry-rails
   rails (= 3.2.21)

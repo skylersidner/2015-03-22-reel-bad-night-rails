@@ -58,5 +58,6 @@ gem 'rottentomatoes'
 # Adding encryption for passwords
 gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'pony', '1.11'
 
 
