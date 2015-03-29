@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  include LoginsHelper
+
+  before_filter :check_for_admin, only: [:new]
 
   def index
     @results = Event.all

@@ -7,8 +7,9 @@ module LoginsHelper
 
   def check_for_admin
     @user = Patron.find_by_id(session[:user])
-    if @user.username != "Admin"
-      redirect "/login"
+    if @user == nil || @user.username != "Admin"
+      flash[:denied] = "You must be logged in as an Administrator to do that."
+      redirect_to "/login"
     end
   end
 

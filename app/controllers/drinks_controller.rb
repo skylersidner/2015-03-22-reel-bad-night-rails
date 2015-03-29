@@ -1,4 +1,7 @@
 class DrinksController < ApplicationController
+  include LoginsHelper
+
+  before_filter :check_for_admin, only: [:new]
 
   def index
     @results = Drink.all
