@@ -17,9 +17,11 @@
   </form>
 </div>
 
+<!-- check to see if there are any results; this will not display upon the first view -->
 <% if @results.count != 0 %>
   <% @results.each do |object| %>
     <div class="display">
+<!-- display the results in a form with hidden fields to track the data -->
       <%= form_tag("/films/new", method: "get") do %>
         <div class="rotten_results">
           <p>Title: <%= object.title %></p>
@@ -32,8 +34,10 @@
             <%= hidden_field_tag("synopsis", "#{object.synopsis}") %>
           <p>Rotten/Fresh Rating: <%= object.rt_rating %></p>
             <%= hidden_field_tag("rt_rating", "#{object.rt_rating}") %>
+            
             <%= submit_tag "This One!"%>
         </div>
+<!-- @thumbs is an array populated with either a movie poster thumbnail if available, or a generic placeholder; -->
         <div class="movie_thumb">
           <img src="<%= @thumbs[@results.find_index(object)] %>" alt="poster thumbnail" height="100" width="67">
         </div>
