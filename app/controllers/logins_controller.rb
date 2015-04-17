@@ -5,25 +5,38 @@ class LoginsController < ApplicationController
   end
   
   def validate
-    @messages = [] 
+    
+    #create array to hold information about problems with the login
+    @messages = []
+    #check if username exists in database
     if @user = Patron.find_by_username(params[:username])
+      #check if password matches that username's password
       if @user.try(:authenticate, params[:password])
+        #capture that user's id for the session cookie
         session[:user] = @user.id
+        #create success message for new route
         flash[:success] = "Login Successful!"
+        #send to new route
         redirect_to "/patrons/#{@user.id}"
       else
+        #if password doesn't match, stay on page and show message
         @messages << "Invalid Password"
         render "login"
       end
     else
+      #if username isn't in database, stay on page and show message
       @messages << "Invalid Username"
       render "login"
     end
+    # As an aside, I realize that this is a minor security vulnerability;
+    # I may have the message display, "Invalid Username or Password" in the
+    # future, but I have it this way to make the logic path more tangible.
 
   end
   
   def logout
-    no_user #helper
+    #helper that sets session cookie and @user variable  to nil
+    no_user
     flash[:logout] = "Logged Out!"
     redirect_to "/login"
   end
